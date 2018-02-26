@@ -3,6 +3,7 @@ const app = express();
 const ejs = require('ejs');
 // const PORT = 8080;
 const path = require('path');
+var cors = require('cors');
 const exchangesInfo = require('./test.js');
 app.set('port', process.env.PORT || 3000);
 const server = app.listen(app.get('port'), function() {
@@ -10,6 +11,7 @@ const server = app.listen(app.get('port'), function() {
   });
 app.set('views', './views');
 app.set('view engine', 'ejs');
+app.use(cors());
 // app.listen(PORT, function () {
 //   console.log(`app is listening on ${PORT}`);
 // });
