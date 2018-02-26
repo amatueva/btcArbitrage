@@ -1,0 +1,33 @@
+{
+  "name": "btcarbitrage",
+  "version": "1.0.0",
+  "description": "\"App shows arbitrage opportunities for BTC traders\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cassul/btcArbitrage.git"
+  },
+  "keywords": [
+    "\"Cryptocurrency\"",
+    "\"Arbitrage\"",
+    "\"Trade\""
+  ],
+  "author": "\"Aysa Matueva\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cassul/btcArbitrage/issues"
+  },
+  "homepage": "https://github.com/Cassul/btcArbitrage#readme",
+  "dependencies": {
+    "ccxt": "^1.10.1198",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "lodash": "^4.17.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.15.1"
+  }
+}
