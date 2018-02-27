@@ -18,7 +18,7 @@ const exchangesInfo = {};
 }) ()
 const symbol2 = 'BTC/USD'
 const exchanges2 = [ 'bitmex', 'bitfinex', 'gdax', 'kraken','bitflyer', 'bitstamp']
-;(async () => {
+;module.exports =(async () => {
 
     const result = await Promise.all (exchanges2.map (async id => {
 
@@ -30,7 +30,7 @@ const exchanges2 = [ 'bitmex', 'bitfinex', 'gdax', 'kraken','bitflyer', 'bitstam
     result.forEach(function (market) {
         exchangesInfo[market.exchange] = market.info;
     })
+    return exchangesInfo;
 }) ()
-module.exports = exchangesInfo;
 //usd = 'bitmex', 'huobi', 'bitfinex', 'gdax'
 //upbit, bithump = krw
