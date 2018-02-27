@@ -14,7 +14,8 @@ const kraken = require('./kraken');
 const okex = require('./okex');
 const poloniex = require('./poloniex');
 var cors = require('cors');
-const exchangesInfo = require('./test.js');
+const exchangesInfo = require('./exchangesInfo');
+
 app.set('port', process.env.PORT || 3000);
 const server = app.listen(app.get('port'), function() {
   console.log('listening to port ' + app.get('port'));
