@@ -1,4 +1,5 @@
-let exchangesInfo = require('./test.js');
+const exchangesInfo = require('./test.js');
+const _ = require('lodash');
 module.exports = exchangesInfo.then( function (exchangesInfo) {
   var one = ["binance","okex", "hitbtc", "poloniex", "bitmex", "bitfinex", "gdax", "kraken", "bitflyer", "bitstamp"];
   var obj1 = {};
@@ -15,8 +16,14 @@ module.exports = exchangesInfo.then( function (exchangesInfo) {
     obj2[one[k]] = market;
     k++;
   });
-      console.log([obj1, obj2]);
-      return [obj1, obj2];
+
+  var small = _.sortBy(allAsks)[0];
+  var big = _.sortBy(allBids)[9];
+  var whereToBuy = one[allAsks.indexOf(small)];
+  var whereToSell = one[allBids.indexOf(big)];
+  var bestBuy = big - small;
+  
+  return [obj1, obj2, whereToBuy, whereToSell, bestBuy];
   
 }
 );
