@@ -1,7 +1,8 @@
 let exchangesInfo = require('./test.js');
+let _ = require('lodash');
 module.exports = exchangesInfo.then(allMarkets => {
   let exchangesInfo = {};
-  let names = Object.keys(allMarkets);
+  let names = Object.keys(allMarkets).map((market) => _.toUpper(market));
   let volumes = [];
   volumes.push(Object.values(allMarkets)[0].volume);
   volumes.push(Object.values(allMarkets)[1].vol);

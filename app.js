@@ -15,6 +15,7 @@ const okex = require('./okex');
 const poloniex = require('./poloniex');
 var cors = require('cors');
 const exchangesInfo = require('./exchangesInfo');
+const allAsks_allBids_allFees = require('./allAsks_allBids_allFees');
 
 app.set('port', process.env.PORT || 3000);
 const server = app.listen(app.get('port'), function() {
@@ -32,6 +33,11 @@ app.get('/', function (req,res) {
   res.json(exchangesInfo);
 });
 }); 
+app.get('/allasks_allbids_allfees', function (req,res) {
+  allAsks_allBids_allFees.then(function (array) {
+   res.json(array);
+  });
+});
 app.get('/binance', function (req,res) {
   binance.then(function (binance) {
    res.json(binance);
