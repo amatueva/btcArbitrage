@@ -23,7 +23,7 @@ module.exports = exchangesInfo.then( function (exchangesInfo) {
   var whereToSell = one[allBids.indexOf(big)];
   var bestBuy = big - small;
   
-  return [obj1, obj2, whereToBuy, whereToSell, bestBuy];
+  return [obj1, obj2, whereToBuy, small, whereToSell, big, bestBuy];
   
 }
 );
